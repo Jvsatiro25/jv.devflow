@@ -1,0 +1,1771 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --nav-bg: #3d3d3d;
+    --white: #ffffff;
+    --bg: #0d0d14;
+    --purple: #6600ff;
+    --bg-black: #000000;
+    --work-label-size: 32px;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--bg-black);
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    overflow-x: clip;
+}
+
+/* ===================== LOADING SCREEN ===================== */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-logo img {
+    display: block;
+    height: 160px;
+    will-change: filter;
+    transition: filter 0.15s ease-out;
+}
+
+
+
+/* ===================== HEADER ===================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(13, 13, 20, 0.8);
+    backdrop-filter: blur(10px);
+    height: 70px;
+    padding: 0 25px;
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(102, 0, 255, 0.1);
+}
+
+.logo img {
+    height: 150px;
+    display: block;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* --- NAVIGATION (DESKTOP) --- */
+nav {
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    margin: 0 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-fale {
+    background-color: #111116;
+    color: var(--white);
+    border: 1px solid rgba(102, 0, 255, 0.4);
+    border-radius: 12px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 120;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cta-fale:hover {
+    background-color: #1a1a24;
+    border-color: var(--purple);
+    transform: translateY(-2px);
+}
+
+/* --- HAMBURGER --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 15px;
+    cursor: pointer;
+    margin-right: 20px;
+    z-index: 130;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--purple);
+    transition: 0.3s;
+}
+
+/* ===================== SECTION 1 — HOME ===================== */
+#section-home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-black);
+}
+
+.video-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.vid-mobile { display: none; }
+
+/* ===================== SECTION 2 — WORK ===================== */
+.work-wrapper {
+    position: relative;
+    height: 200vh;
+    z-index: 1;
+}
+
+#section-work {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* CARD WORK */
+.card-container {
+    position: relative;
+    width: 280px;
+    height: 340px;
+    background: #111116;
+    border: 1px solid rgba(102,0,255,0.35);
+    border-radius: 16px;
+    padding: 24px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-title-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.card-desc-text {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.card-tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.card-tags-wrap span {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--purple);
+    background: rgba(102,0,255,0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* ===================== SECTION 3 — STACK ===================== */
+#section-stack {
+    position: relative;
+    height: calc(150vh + 650vh);
+    z-index: 10;
+    background-color: var(--bg-black);
+    margin-top: -100vh;
+    box-shadow: 0 -30px 60px rgba(0, 0, 0, 0.9);
+}
+
+.stack-sticky {
+    position: sticky;
+    top: 0;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 40px 40px;
+}
+
+.stack-header {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5;
+}
+
+.stack-eyebrow {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 4px;
+}
+
+.stack-title {
+    font-size: clamp(36px, 8vw, 80px);
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -2px;
+    font-family: 'Black Ops One', 'Impact', sans-serif;
+}
+
+.stack-cards {
+    position: relative;
+    width: min(100%, 700px);
+    height: 450px;
+}
+
+.sk-card {
+    position: absolute;
+    left: 0; right: 0;
+    height: 300px;
+    border-radius: 16px;
+    overflow: visible;
+    transform-origin: top center;
+    will-change: transform, opacity;
+    background: rgba(18, 14, 32, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(102,0,255,0.35);
+    opacity: 0;
+    transform: translateY(100%);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.sk-peek {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    border-radius: 16px 16px 0 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sk-peek-title {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Black Ops One', 'Impact', sans-serif;
+}
+
+.sk-card-inner {
+    display: grid;
+    grid-template-columns: 56px 1fr 80px;
+    gap: 24px;
+    height: 100%;
+    padding: 20px 40px 36px;
+    align-items: center;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.sk-number {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--purple);
+    opacity: 0.5;
+    margin: 20px 0px 6px;
+}
+
+.sk-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sk-name {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Black Ops One', 'Impact', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sk-card[data-index="0"] .sk-name,
+.sk-card[data-index="0"] .sk-peek-title { color: #bf00ff; text-shadow: 0 0 14px #bf00ffaa; }
+.sk-card[data-index="1"] .sk-name,
+.sk-card[data-index="1"] .sk-peek-title { color: #ff6600; text-shadow: 0 0 14px #ff6600aa; }
+.sk-card[data-index="2"] .sk-name,
+.sk-card[data-index="2"] .sk-peek-title { color: #00e5ff; text-shadow: 0 0 14px #00e5ffaa; }
+.sk-card[data-index="3"] .sk-name,
+.sk-card[data-index="3"] .sk-peek-title { color: #00ff88; text-shadow: 0 0 14px #00ff88aa; }
+
+.sk-desc {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.sk-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sk-techs span {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--purple);
+    background: rgba(102,0,255,0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.sk-icon {
+    color: var(--purple);
+    width: 60px;
+    height: 60px;
+}
+
+/* OUTROS ELEMENTOS */
+.main-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 769px) { .main-bg { background-image: url('fundo.png'); } }
+@media (max-width: 768px) { .main-bg { background-image: url('fundo-mobile.png'); } }
+
+.main-bg::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.bg-letters {
+    position: absolute;
+    inset: 0; z-index: 0;
+    overflow: hidden;
+}
+.bg-letters span {
+    position: absolute;
+    font-size: clamp(80px, 28vw, 130px);
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(102, 0, 255, 0.32);
+}
+
+.work-inner {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 769px) {
+    .work-inner {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+.canvas-section {
+    width: min(85vw, 450px);
+    display: flex;
+    justify-content: center;
+    margin: -100px 20px 20px 20px;
+}
+
+canvas {
+    width: 80%;
+    aspect-ratio: 4/3;
+}
+
+.work-label {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    z-index: 20;
+}
+
+.work-label h1 {
+    font-size: var(--work-label-size);
+    font-weight: 900;
+    color: #fff;
+    background: #000;
+    padding: 4px 12px;
+    display: inline-block;
+    line-height: 1;
+}
+
+.slider-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--purple);
+    border: none; color: #fff;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.dots {
+    display: flex; gap: 6px;
+    margin-top: 15px;
+    justify-content: center;
+}
+.dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+}
+.dot.active { background: var(--purple); }
+
+
+/* ===================== STACK CARDS — FIXES GLOBAIS MOBILE ==================
+   Aplica em todos os grupos móveis (< 1024px).
+   =========================================================================== */
+@media (max-width: 1023px) {
+
+    /* -- CENTRALIZAÇÃO REAL: tira o header do position:absolute --
+       Em desktop o header flutua sobre o sticky. Em mobile isso faz o título
+       sumir atrás do nav ou competir com os cards. Aqui colocamos tudo em
+       fluxo flex: header em cima, cards embaixo, gap entre eles. */
+    .stack-sticky {
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .stack-header {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* -- ESPAÇAMENTO NÚMERO → TÍTULO -- */
+    .sk-number {
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        opacity: 0.6;
+        margin-bottom: 6px;
+        line-height: 1;
+    }
+
+    .sk-info { gap: 8px; }
+
+    .sk-name { line-height: 1.15; }
+
+    /* Impede conteúdo do card-inner de vazar para fora do card */
+    .sk-card {
+        overflow: hidden;
+    }
+
+    /* card-inner não pode ultrapassar a altura do card pai */
+    .sk-card-inner {
+        height: 100%;
+        overflow: hidden;
+        align-items: start;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE — SISTEMA DE BREAKPOINTS REVISADO
+   ----------------------------------------------------------
+
+   Grupos e telas cobertas:
+   ┌──────────────────────────────────────────────────────────┐
+   │ GRUPO A — Phones pequenos       até 374px               │
+   │   • iPhone SE 1ª/2ª gen (320×568), telas estreitas      │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO B — Phones compactos      375–389px               │
+   │   • 375×667 (iPhone SE 3ª gen, iPhone 6/7/8)  ✓ alvo   │
+   │   • 360×640 / 360×740 (Samsung A-series)       ✓ alvo   │
+   │   Margem segura: 360–389px                              │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO C — Phones médios         390–429px               │
+   │   • 390×844 (iPhone 14, 15, 16)                ✓ alvo   │
+   │   • 393×852 (iPhone 14 Pro, 15 Pro)                     │
+   │   Margem segura: 390–429px                              │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO D — Phones grandes        430–767px               │
+   │   • 430×932 (iPhone 14 Plus, 15 Plus)          ✓ alvo   │
+   │   • 412×915 (Pixel 6/7/8, Galaxy S21–S23)              │
+   │   Margem segura: 430–767px                              │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO E — Tablets pequenos      768–819px               │
+   │   • 768×1024 (iPad mini, iPad 9ª gen portrait) ✓ alvo   │
+   │   Margem segura: 768–819px                              │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO F — Tablets médios        820–1023px              │
+   │   • 820×1180 (iPad Air portrait)               ✓ alvo   │
+   │   Margem segura: 820–1023px                             │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO G — Tablets grandes       1024–1279px             │
+   │   • 1024×1366 (iPad Pro 12.9" portrait)        ✓ alvo   │
+   │   • 1024×768 (iPad landscape)                           │
+   │   Margem segura: 1024–1279px                            │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO H — Laptop HD             1280–1439px             │
+   │   • MacBook 13", laptops HD                             │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO I — Desktop HD            1440–1919px             │
+   │   • MacBook Pro 14", monitores 1440p                    │
+   ├──────────────────────────────────────────────────────────┤
+   │ GRUPO J — Full HD / 4K          1920px+                 │
+   │   • Monitores 27", 4K                                   │
+   └──────────────────────────────────────────────────────────┘
+
+   Nota sobre 360×740: width=360px cai no Grupo B (375–389px
+   usa min-width:360px como limite inferior real). O seletor
+   cobre de 360 até 389px com margem confortável.
+   ========================================================== */
+
+
+/* ============================================================
+   GRUPO A — Phones muito pequenos  (< 360px)
+   Telas: 320×568, 320×480 e similares
+   ============================================================ */
+@media (max-width: 359px) {
+    /* ── HEADER ── */
+    header { padding: 0 10px; height: 58px; }
+    .logo img { height: 75px; }
+    .menu-toggle { display: flex; margin-right: 8px; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 58px; left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4px 0;
+        z-index: 100;
+    }
+    nav.active { display: flex; }
+    nav a {
+        margin: 0; font-size: 11px; width: 100%;
+        padding: 13px 16px;
+        border-bottom: 1px solid #1a1a1a;
+        border-radius: 0; background: transparent;
+    }
+    nav a:first-child { border-top: 1px solid #1a1a1a; }
+    .cta-fale { padding: 0 9px; font-size: 9px; height: 33px; border-radius: 7px; margin-left: 6px; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    /* ── VIDEO ── */
+    .vid-desktop { display: none; }
+    .vid-mobile  { display: block; object-position: top; }
+    /* ── WORK ── */
+    .work-inner { gap: 0; padding-top: 58px; }
+    .canvas-section { width: 92vw; margin: 0 auto; }
+    canvas { margin: -50px 0 30px; }
+    .card-container { width: 210px; height: 270px; padding: 10px; }
+    .card-title-text { font-size: 15px; }
+    .card-desc-text  { font-size: 10px; }
+    .arrow { width: 28px; height: 28px; font-size: 14px; }
+    .work-label h1 { font-size: 22px; }
+    /* ── STACK ── */
+    .stack-sticky { padding-left: 12px; padding-right: 12px; }
+    .stack-cards  { width: 100%; height: 380px; }
+    .sk-card      { height: 280px; }
+    .sk-card-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 16px 14px 18px; gap: 14px;
+    }
+    .sk-number { font-size: 16px; }
+    .sk-name   { font-size: 14px; }
+    .sk-desc   { font-size: 11px; }
+    .sk-icon   { display: none; }
+    .stack-title { font-size: clamp(26px, 10vw, 44px); letter-spacing: -1px; }
+}
+
+
+/* ============================================================
+   GRUPO B — Phones compactos  (360–389px)
+   Telas alvo: 375×667 · 360×740
+   Margem segura: 360 até 389px
+   ============================================================ */
+@media (min-width: 360px) and (max-width: 389px) {
+    /* ── HEADER ── */
+    header { padding: 0 14px; height: 62px; }
+    .logo img { height: 85px; }
+    .menu-toggle { display: flex; margin-right: 10px; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 62px; left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6px 0;
+        z-index: 100;
+    }
+    nav.active { display: flex; }
+    nav a {
+        margin: 0; font-size: 12px; width: 100%;
+        padding: 14px 18px;
+        border-bottom: 1px solid #1a1a1a;
+        border-radius: 0; background: transparent;
+        letter-spacing: 1.5px;
+    }
+    nav a:first-child { border-top: 1px solid #1a1a1a; }
+    .cta-fale { padding: 0 10px; font-size: 10px; height: 35px; border-radius: 8px; margin-left: 8px; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    /* ── VIDEO ── */
+    .vid-desktop { display: none; }
+    .vid-mobile  { display: block; object-position: top; }
+    /* ── WORK ── */
+    .work-wrapper { height: 200vh; }
+    .work-inner { gap: 0; padding-top: 62px; }
+    .canvas-section { width: 90vw; margin: 0 auto; }
+    canvas { margin: -55px 0 35px; }
+    .card-container { width: 230px; height: 290px; padding: 12px; }
+    .card-title-text { font-size: 17px; }
+    .card-desc-text  { font-size: 11px; }
+    .arrow { width: 30px; height: 30px; font-size: 15px; }
+    .work-label h1 { font-size: 24px; }
+    .dots { margin-top: 10px; }
+    /* ── STACK ── */
+    .stack-sticky { padding-left: 14px; padding-right: 14px; height: 120vh; }
+    .stack-cards  { width: 100%; height: 400px; }
+    .sk-card      { height: 285px; }
+    .sk-card-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 18px 16px 20px; gap: 14px;
+    }
+    .sk-number { font-size: 18px; }
+    .sk-name   { font-size: 16px; }
+    .sk-desc   { font-size: 12px; }
+    .sk-icon   { display: none; }
+    .stack-title { font-size: clamp(28px, 9vw, 46px); letter-spacing: -1px; }
+    /* ── SECTION STACK HEIGHT (667px vs 740px: telas curtas precisam de menos scroll) ── */
+    #section-stack { height: calc(120vh + 500vh); margin-top: -100vh; }
+}
+
+
+/* ============================================================
+   GRUPO C — Phones médios  (390–429px)
+   Telas alvo: 390×844 · 393×852 · 393×852
+   Margem segura: 390 até 429px
+   ============================================================ */
+@media (min-width: 390px) and (max-width: 429px) {
+    /* ── HEADER ── */
+    header { padding: 0 16px; height: 64px; }
+    .logo img { height: 90px; }
+    .menu-toggle { display: flex; margin-right: 12px; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 7px 0;
+        z-index: 100;
+    }
+    nav.active { display: flex; }
+    nav a {
+        margin: 0; font-size: 12px; width: 100%;
+        padding: 15px 20px;
+        border-bottom: 1px solid #1a1a1a;
+        border-radius: 0; background: transparent;
+        letter-spacing: 1.5px;
+    }
+    nav a:first-child { border-top: 1px solid #1a1a1a; }
+    .cta-fale { padding: 0 12px; font-size: 11px; height: 37px; border-radius: 9px; margin-left: 10px; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    /* ── VIDEO ── */
+    .vid-desktop { display: none; }
+    .vid-mobile  { display: block; object-position: top; }
+    /* ── WORK ── */
+    .work-wrapper { height: 200vh; }
+    .work-inner { padding-top: 64px; }
+    .canvas-section { width: 88vw; margin: 0 auto; }
+    canvas { margin: -60px 0 40px; }
+    .card-container { width: 245px; height: 310px; padding: 14px; }
+    .card-title-text { font-size: 18px; }
+    .card-desc-text  { font-size: 12px; }
+    .arrow { width: 32px; height: 32px; font-size: 16px; }
+    .work-label h1 { font-size: 26px; }
+    .dots { margin-top: 12px; }
+    /* ── STACK ── */
+    .stack-sticky { padding-left: 18px; padding-right: 18px; height: 100vh; }
+    .stack-cards  { width: 100%; height: 420px; }
+    .sk-card      { height: 300px; }
+    .sk-card-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 20px 20px 24px; gap: 14px;
+    }
+    .sk-number { font-size: 20px; }
+    .sk-name   { font-size: 17px; }
+    .sk-desc   { font-size: 13px; }
+    .sk-icon   { display: none; }
+    .stack-title { font-size: clamp(30px, 9vw, 50px); letter-spacing: -1px; }
+    #section-stack { height: calc(130vh + 550vh); margin-top: -100vh; }
+}
+
+
+/* ============================================================
+   GRUPO D — Phones grandes  (430–767px)
+   Telas alvo: 430×932 · 412×915 (Pixel/Galaxy S-series)
+   Margem segura: 430 até 767px
+   ============================================================ */
+@media (min-width: 430px) and (max-width: 767px) {
+    /* ── HEADER ── */
+    header { padding: 0 18px; height: 66px; }
+    .logo img { height: 100px; }
+    .menu-toggle { display: flex; margin-right: 14px; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 66px; left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 0;
+        z-index: 100;
+    }
+    nav.active { display: flex; }
+    nav a {
+        margin: 0; font-size: 13px; width: 100%;
+        padding: 16px 24px;
+        border-bottom: 1px solid #1a1a1a;
+        border-radius: 0; background: transparent;
+        letter-spacing: 1.5px;
+    }
+    nav a:first-child { border-top: 1px solid #1a1a1a; }
+    .cta-fale { padding: 0 15px; font-size: 11px; height: 38px; border-radius: 9px; margin-left: 12px; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    /* ── VIDEO ── */
+    .vid-desktop { display: none; }
+    .vid-mobile  { display: block; object-position: top; }
+    /* ── WORK ── */
+    .work-wrapper { height: 200vh; }
+    .work-inner { padding-top: 66px; }
+    .canvas-section { width: 82vw; margin: 0 auto; }
+    canvas { margin: -80px 0 55px; }
+    .card-container { width: 255px; height: 320px; padding: 16px; }
+    .card-title-text { font-size: 19px; }
+    .card-desc-text  { font-size: 13px; }
+    .arrow { width: 34px; height: 34px; font-size: 17px; }
+    .work-label h1 { font-size: 28px; }
+    .dots { margin-top: 13px; }
+    /* ── STACK ── */
+    .stack-sticky { padding-left: 22px; padding-right: 22px; height: 100vh; }
+    .stack-cards  { width: 96%; height: 440px; }
+    .sk-card      { height: 315px; }
+    .sk-card-inner {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 22px 24px 26px; gap: 16px;
+    }
+    .sk-number { font-size: 21px; }
+    .sk-name   { font-size: 18px; }
+    .sk-desc   { font-size: 13px; }
+    .sk-icon   { display: none; }
+    .stack-title { font-size: clamp(32px, 8vw, 54px); letter-spacing: -1px; }
+    #section-stack { height: calc(100vh + 450vh); margin-top: -100vh; }
+}
+
+
+/* ============================================================
+   GRUPO E — Tablets pequenos  (768–819px)
+   Telas alvo: 768×1024 (iPad mini, iPad 9ª gen portrait)
+   Margem segura: 768 até 819px
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 819px) {
+    /* ── HEADER ── */
+    header { padding: 0 22px; height: 67px; }
+    .logo img { height: 120px; }
+    .menu-toggle { display: flex; margin-right: 14px; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 67px; left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(102,0,255,0.2);
+    }
+    nav.active { display: flex; }
+    nav a {
+        margin: 0; font-size: 13px; width: 100%;
+        padding: 17px 26px;
+        border-bottom: 1px solid #1a1a1a;
+        border-radius: 0; background: transparent;
+        letter-spacing: 2px;
+    }
+    nav a:first-child { border-top: 1px solid #1a1a1a; }
+    .cta-fale { padding: 0 18px; font-size: 12px; height: 40px; border-radius: 10px; margin-left: 0; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    /* ── VIDEO ── */
+    .vid-desktop { display: none; }
+    .vid-mobile  { display: block; object-position: top; }
+    /* ── WORK — coluna única centralizada ── */
+    .work-wrapper { height: 200vh; }
+    .work-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding-top: 67px;
+        padding-bottom: 20px;
+        height: 100%;
+    }
+    .canvas-section { width: min(68vw, 400px); margin: 0; }
+    canvas { width: 100%; margin: -35px 0 16px; }
+    .slider-area { justify-content: center; }
+    .card-container { width: 310px; height: 330px; padding: 20px; }
+    .card-title-text { font-size: 21px; }
+    .card-desc-text  { font-size: 13px; }
+    .work-label { top: -40px; }
+    .work-label h1 { font-size: 28px; }
+    .arrow { width: 36px; height: 36px; font-size: 18px; }
+    .dots { margin-top: 12px; }
+    /* ── STACK ── */
+    #section-stack { height: calc(100vh + 400vh); margin-top: -100vh; }
+    .stack-sticky { padding-left: 28px; padding-right: 28px; height: 150vh;}
+    .stack-header { top: auto; }
+    .stack-title { font-size: clamp(38px, 8.5vw, 62px); }
+    .stack-cards { width: min(100%, 600px); height: 430px; }
+    .sk-card { height: 320px; }
+    .sk-card-inner {
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+        padding: 22px 26px 30px;
+        align-items: start;
+    }
+    .sk-icon   { display: none; }
+    .sk-number { font-size: 20px; }
+    .sk-name   { font-size: 19px; }
+    .sk-desc   { font-size: 13px; line-height: 1.6; }
+    .sk-techs span { font-size: 10px; padding: 4px 9px; }
+}
+
+
+/* ============================================================
+   GRUPO F — Tablets médios  (820–1023px)
+   Telas alvo: 820×1180 (iPad Air portrait)
+   Margem segura: 820 até 1023px
+   ============================================================ */
+@media (min-width: 820px) and (max-width: 1023px) {
+    /* ── HEADER ── */
+    header { padding: 0 26px; height: 68px; }
+    .logo img { height: 130px; }
+    .menu-toggle { display: flex; margin-right: 16px; }
+    nav {
+        display: none;
+        position: absolute;
+        top: 68px; left: 0;
+        width: 100%;
+        background: #000;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 0;
+        z-index: 100;
+        border-bottom: 1px solid rgba(102,0,255,0.2);
+    }
+    nav.active { display: flex; }
+    nav a {
+        margin: 0; font-size: 14px; width: 100%;
+        padding: 18px 28px;
+        border-bottom: 1px solid #1a1a1a;
+        border-radius: 0; background: transparent;
+        letter-spacing: 2px;
+    }
+    nav a:first-child { border-top: 1px solid #1a1a1a; }
+    .cta-fale { padding: 0 20px; font-size: 12px; height: 41px; border-radius: 10px; margin-left: 0; }
+    .menu-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .menu-toggle.active span:nth-child(2) { opacity: 0; }
+    .menu-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    /* ── VIDEO ── */
+    .vid-desktop { display: none; }
+    .vid-mobile  { display: block; object-position: top; }
+    /* ── WORK — coluna única centralizada ── */
+    .work-wrapper { height: 200vh; }
+    .work-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding-top: 68px;
+        padding-bottom: 24px;
+        height: 100%;
+    }
+    .canvas-section { width: min(65vw, 420px); margin: 0; }
+    canvas { width: 100%; margin: -40px 0 18px; }
+    .slider-area { justify-content: center; }
+    .card-container { width: 330px; height: 345px; padding: 22px; }
+    .card-title-text { font-size: 22px; }
+    .card-desc-text  { font-size: 14px; }
+    .work-label { top: -42px; }
+    .work-label h1 { font-size: 30px; }
+    .arrow { width: 38px; height: 38px; font-size: 20px; }
+    .dots { margin-top: 14px; }
+    /* ── STACK ── */
+    #section-stack { height: calc(100vh + 420vh); margin-top: -100vh; }
+    .stack-sticky { padding-left: 34px; padding-right: 34px; }
+    .stack-header { top: auto; }
+    .stack-title { font-size: clamp(42px, 9vw, 68px); }
+    .stack-cards { width: min(100%, 640px); height: 450px; }
+    .sk-card { height: 330px; }
+    .sk-card-inner {
+        grid-template-columns: 52px 1fr;
+        gap: 16px;
+        padding: 24px 30px 34px;
+        align-items: start;
+    }
+    .sk-icon   { display: none; }
+    .sk-number { font-size: 22px; }
+    .sk-name   { font-size: 20px; }
+    .sk-desc   { font-size: 14px; line-height: 1.6; }
+    .sk-techs span { font-size: 10px; padding: 4px 10px; }
+}
+
+
+/* ============================================================
+   GRUPO G — Tablets grandes / Laptop portrait  (1024–1279px)
+   Telas alvo: 1024×1366 (iPad Pro 12.9" portrait)
+   Margem segura: 1024 até 1279px
+   ============================================================ */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* ── HEADER — desktop compacto ── */
+    header { padding: 0 32px; height: 70px; }
+    .logo img { height: 140px; }
+    /* Nav horizontal visível, sem hamburguer */
+    .menu-toggle { display: none; }
+    nav { display: flex; }
+    nav a { font-size: 10px; margin: 0 12px; }
+    .cta-fale { padding: 0 20px; font-size: 13px; height: 44px; border-radius: 11px; }
+    /* ── VIDEO ── */
+    .vid-desktop { display: block; }
+    .vid-mobile  { display: none; }
+    /* ── WORK — layout lado a lado ── */
+    .work-inner { flex-direction: row; justify-content: space-evenly; }
+    .canvas-section { width: min(42vw, 400px); }
+    canvas { margin: 0; }
+    .card-container { width: 275px; height: 340px; padding: 22px; }
+    .card-title-text { font-size: 21px; }
+    .card-desc-text  { font-size: 13px; }
+    .work-label h1 { font-size: 30px; }
+    /* ── STACK ── */
+    .stack-sticky { padding: 84px 40px 44px; height: 150vh; }
+    .stack-header { top: 84px; }
+    .stack-title { font-size: clamp(40px, 7.5vw, 72px); }
+    .stack-cards { width: min(100%, 680px); height: 450px; }
+    .sk-card     { height: 295px; }
+    .sk-card-inner {
+        grid-template-columns: 52px 1fr 72px;
+        gap: 20px;
+        padding: 20px 36px 32px;
+        align-items: center;
+    }
+    .sk-icon   { display: block; width: 54px; height: 54px; }
+    .sk-number { font-size: 22px; }
+    .sk-name   { font-size: 20px; }
+    .sk-desc   { font-size: 14px; }
+    .sk-techs span { font-size: 10px; }
+}
+
+
+/* ============================================================
+   GRUPO H — Laptop HD  (1280–1439px)
+   Telas: MacBook 13", laptops 1280px
+   ============================================================ */
+@media (min-width: 1280px) and (max-width: 1439px) {
+    header { padding: 0 40px; }
+    .logo img { height: 150px; }
+    .menu-toggle { display: none; }
+    nav { display: flex; }
+    nav a { font-size: 11px; margin: 0 14px; }
+    .cta-fale { padding: 0 22px; font-size: 13px; }
+    .vid-desktop { display: block; }
+    .vid-mobile  { display: none; }
+    .canvas-section { width: min(45vw, 430px); }
+    .stack-cards { width: min(100%, 700px); }
+}
+
+
+/* ============================================================
+   GRUPO I — Desktop HD  (1440–1919px)
+   Telas: MacBook Pro 14", monitores 1440p
+   ============================================================ */
+@media (min-width: 1440px) and (max-width: 1919px) {
+    header { padding: 0 52px; }
+    .logo img { height: 150px; }
+    .menu-toggle { display: none; }
+    nav { display: flex; }
+    nav a { font-size: 11px; margin: 0 16px; }
+    .cta-fale { padding: 0 26px; font-size: 14px; height: 46px; }
+    .vid-desktop { display: block; }
+    .vid-mobile  { display: none; }
+    .canvas-section { width: min(46vw, 460px); }
+    .stack-sticky { padding: 90px 60px 50px; }
+    .stack-cards  { width: min(100%, 720px); height: 460px; }
+    .sk-card      { height: 310px; }
+    .sk-card-inner { padding: 24px 44px 40px; }
+    .sk-name { font-size: 24px; }
+    .sk-desc { font-size: 15px; }
+}
+
+
+/* ============================================================
+   GRUPO J — Full HD / 4K  (1920px+)
+   Telas: monitores 27", 4K
+   ============================================================ */
+@media (min-width: 1920px) {
+    header { padding: 0 80px; height: 76px; }
+    .logo img { height: 160px; }
+    .menu-toggle { display: none; }
+    nav { display: flex; }
+    nav a { font-size: 12px; margin: 0 20px; }
+    .cta-fale { padding: 0 32px; font-size: 15px; height: 50px; border-radius: 14px; }
+    .vid-desktop { display: block; }
+    .vid-mobile  { display: none; }
+    .canvas-section { width: min(44vw, 540px); }
+    .card-container { width: 320px; height: 380px; }
+    .card-title-text { font-size: 26px; }
+    .card-desc-text  { font-size: 15px; }
+    .stack-sticky  { padding: 100px 80px 60px; }
+    .stack-cards   { width: min(100%, 800px); height: 500px; }
+    .sk-card       { height: 340px; }
+    .sk-card-inner { gap: 32px; padding: 28px 52px 44px; }
+    .sk-number { font-size: 30px; }
+    .sk-name   { font-size: 26px; }
+    .sk-desc   { font-size: 16px; }
+    .sk-icon   { width: 72px; height: 72px; }
+    .stack-title { font-size: 100px; }
+}
+
+
+/* ===================== CHAT CARD (Work Slide 1) ===================== */
+.card-body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.chat-card-ui {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.chat-header-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: #1a0033;
+    border-radius: 10px 10px 0 0;
+    flex-shrink: 0;
+    border-bottom: 1px solid rgba(102,0,255,0.3);
+}
+
+.chat-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6600ff, #9933ff);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-avatar::after {
+    content: '🤖';
+    font-size: 14px;
+}
+
+.chat-header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.chat-status {
+    font-size: 9px;
+    color: #7fff7f;
+    line-height: 1.2;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #0d0d1a;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102,0,255,0.3) transparent;
+}
+
+.chat-bubble {
+    display: flex;
+    flex-direction: column;
+    max-width: 82%;
+    padding: 6px 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.chat-bubble.right {
+    align-self: flex-end;
+    background: #5500cc;
+    border-radius: 10px 2px 10px 10px;
+}
+
+.chat-bubble.left {
+    align-self: flex-start;
+    background: #1e1e2e;
+    border: 1px solid rgba(102,0,255,0.25);
+    border-radius: 2px 10px 10px 10px;
+}
+
+.bubble-text {
+    font-size: 11px;
+    color: #fff;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.bubble-time {
+    font-size: 8px;
+    color: rgba(255,255,255,0.45);
+    align-self: flex-end;
+    margin-top: 2px;
+}
+
+.chat-input-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    background: #111116;
+    border-top: 1px solid rgba(102,0,255,0.2);
+    flex-shrink: 0;
+}
+
+.chat-input-field {
+    flex: 1;
+    background: #1a1a2a;
+    border: 1px solid rgba(102,0,255,0.25);
+    border-radius: 16px;
+    padding: 5px 10px;
+    font-size: 10px;
+    color: #fff;
+    min-height: 26px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.chat-cursor {
+    display: inline-block;
+    color: var(--purple);
+    animation: blink 0.9s step-end infinite;
+    font-weight: 100;
+    margin-left: 1px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+.chat-send-btn {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--purple);
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: default;
+    flex-shrink: 0;
+    transition: transform 0.15s, background 0.15s;
+}
+.chat-send-btn.kb-active {
+    transform: scale(0.85);
+    background: #9933ff;
+}
+
+.chat-keyboard {
+    flex-shrink: 0;
+    background: #1a1a28;
+    padding: 5px 4px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(102,0,255,0.15);
+}
+
+.kb-row {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+
+.kb-key {
+    height: 22px;
+    min-width: 18px;
+    padding: 0 3px;
+    background: #2a2a3e;
+    border: 1px solid rgba(102,0,255,0.15);
+    border-radius: 4px;
+    color: #ccc;
+    font-size: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: default;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.1s, color 0.1s, transform 0.1s;
+    flex: 1;
+    max-width: 22px;
+    user-select: none;
+}
+
+.kb-key.kb-space {
+    max-width: 120px;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+.kb-key.kb-back {
+    max-width: 28px;
+    font-size: 10px;
+}
+
+.kb-key.kb-active {
+    background: var(--purple);
+    color: #fff;
+    transform: scale(0.9);
+    border-color: var(--purple);
+}
+
+.typing-indicator {
+    padding: 8px 12px !important;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.typing-dots span {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: rgba(102,0,255,0.7);
+    animation: dotBounce 1.2s infinite ease-in-out;
+}
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes dotBounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.5; }
+    30%           { transform: translateY(-4px); opacity: 1; }
+}
+
+.card-container:has(.chat-card-ui) {
+    height: 300px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-container:has(.chat-card-ui) .card-inner {
+    gap: 0;
+    height: 100%;
+}
+
+
+/* ===================== FOOTER ===================== */
+#footer {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@media (max-width: 767px) {
+    #footer {
+        bottom: 23vh;
+        padding: 24px 0;
+        transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+    #footer.footer-visible {
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+}
+
+#footer.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    bottom: 20px;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-link svg {
+    width: 26px;
+    height: 26px;
+    transition: filter 0.3s ease;
+}
+
+.social-whatsapp {
+    color: #25d366;
+    filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.5));
+}
+.social-whatsapp:hover {
+    filter: drop-shadow(0 0 16px rgba(37, 211, 102, 0.9)) drop-shadow(0 0 32px rgba(37, 211, 102, 0.4));
+    transform: translateY(-3px);
+}
+
+.social-instagram {
+    color: #e1306c;
+    filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.5));
+}
+.social-instagram:hover {
+    filter: drop-shadow(0 0 16px rgba(225, 48, 108, 0.9)) drop-shadow(0 0 32px rgba(225, 48, 108, 0.4));
+    transform: translateY(-3px);
+}
+
+.social-tiktok {
+    color: #69c9d0;
+    filter: drop-shadow(0 0 8px rgba(105, 201, 208, 0.5));
+}
+.social-tiktok:hover {
+    filter: drop-shadow(0 0 16px rgba(105, 201, 208, 0.9)) drop-shadow(0 0 32px rgba(105, 201, 208, 0.4));
+    transform: translateY(-3px);
+}
+/* ===================== FINANCE CARD (Work Slide 2) ===================== */
+.fin-avatar::after {
+    content: '💰';
+    font-size: 14px;
+}
+
+.fin-pix-thumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 7px 10px;
+    min-width: 130px;
+}
+
+.fin-pix-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.fin-pix-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.fin-pix-name {
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.fin-pix-size {
+    font-size: 8px;
+    color: rgba(255,255,255,0.45);
+}
+
+/* ===================== FORM CARD (Work Slide 3) ===================== */
+#form-card-ui {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102,0,255,0.3) transparent;
+}
+
+.fcard-form {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.fcard-form-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    background: #1a0033;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid rgba(102,0,255,0.3);
+    flex-shrink: 0;
+}
+
+.fcard-form-icon { font-size: 14px; }
+
+.fcard-form-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.fcard-fields {
+    flex-shrink: 0;
+    padding: 8px 10px 4px;
+    background: #0d0d1a;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fcard-field {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.fcard-label {
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: rgba(102,0,255,0.8);
+}
+
+.fcard-input {
+    background: #1a1a2a;
+    border: 1px solid rgba(102,0,255,0.2);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 10px;
+    color: #fff;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s;
+}
+
+.fcard-input-active {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 2px rgba(102,0,255,0.15);
+}
+
+.fcard-submit {
+    flex-shrink: 0;
+    margin: 5px 10px 6px;
+    background: var(--purple);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 0;
+    cursor: default;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.fcard-submit-active {
+    background: #9933ff;
+    transform: scale(0.96);
+}
+
+.form-keyboard {
+    flex-shrink: 0;
+    background: #1a1a28;
+    padding: 5px 4px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-top: 1px solid rgba(102,0,255,0.15);
+}
+
+/* Sheet view */
+.fcard-sheet {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    background: #0d0d1a;
+}
+
+.fcard-sheet-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 10px;
+    background: #1a0033;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid rgba(102,0,255,0.3);
+    flex-shrink: 0;
+}
+
+.fcard-table-wrap {
+    flex-shrink: 0;
+    padding: 6px 8px;
+}
+
+.fcard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+}
+
+.fcard-table th {
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(102,0,255,0.8);
+    padding: 3px 5px;
+    border-bottom: 1px solid rgba(102,0,255,0.25);
+    text-align: left;
+}
+
+.fcard-table td {
+    padding: 4px 5px;
+    color: #ccc;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    vertical-align: middle;
+    max-width: 70px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fcard-row-new td {
+    background: rgba(102,0,255,0.06);
+}
+
+.fcard-status-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.15s;
+    font-weight: 700;
+    padding: 0;
+}
+
+.fcard-status-pending {
+    background: #f0c040;
+    color: #333;
+}
+
+.fcard-status-done {
+    background: #22cc66;
+    color: #fff;
+}
+
+.fcard-status-btn:active {
+    transform: scale(0.85);
+}
+
+.fcard-legend {
+    font-size: 8px;
+    color: #888;
+    padding: 4px 10px 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fcard-legend-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.card-container:has(#form-card-ui) {
+    height: 300px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-container:has(#form-card-ui) .card-body {
+    overflow: hidden;
+}
+
+.card-container:has(#form-card-ui) .card-inner {
+    gap: 0;
+    height: 100%;
+    overflow: hidden;
+}

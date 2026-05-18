@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Victor | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===================== LOADING SCREEN ===================== -->
+    <div id="loading-screen">
+        <div class="loading-logo">
+            <img src="img-home/logo.png" alt="jv.devflow" id="loading-logo-img">
+        </div>
+    </div>
+
+    <!-- ===================== HEADER ===================== -->
+    <header>
+        <div class="logo">
+            <img src="img-home/logo.png" alt="jv.devflow">
+        </div>
+        <div class="nav-right">
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav-menu">
+                <a href="#section-home">HOME</a>
+                <a href="#section-work">WORK</a>
+                <a href="#section-stack">TECH</a>
+                <a href="#" id="nav-contato">CONTATO</a>
+            </nav>
+            <a href="https://wa.me/5524981609173" target="_blank" rel="noopener noreferrer" class="cta-fale">FALE COMIGO</a>
+        </div>
+    </header>
+
+    <!-- ===================== SECTION 1 — HOME ===================== -->
+    <section id="section-home">
+        <video class="video-bg vid-desktop" autoplay muted loop playsinline>
+            <source src="img-home/video-pc.mp4" type="video/mp4">
+        </video>
+        <video class="video-bg vid-mobile" autoplay muted loop playsinline>
+            <source src="img-home/video-mobile.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- ===================== SECTION 2 — WORK ===================== -->
+    <div class="work-wrapper">
+        <section id="section-work">
+            <div class="main-bg"></div>
+
+            <div class="work-inner">
+                <!-- ESQUERDA: CANVAS -->
+                <div class="canvas-section">
+                    <canvas id="hero-lightpass"></canvas>
+                </div>
+
+                <!-- DIREITA: TEXTO + SLIDER -->
+                <div class="content-right">
+                    <div class="slider-area">
+                        <div class="work-label">
+                            <h1>WORK</h1>
+                        </div>
+                        <button class="arrow" id="btn-prev">&#8249;</button>
+
+                        <div class="card-container">
+                            <div class="card-inner">
+                                <div class="card-body">
+                                    <div class="card-content" id="card-content">
+                                        <div class="card-title-text" id="card-title">...</div>
+                                        <div class="card-desc-text" id="card-desc">...</div>
+                                        <div class="card-tags-wrap" id="card-tags"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="arrow" id="btn-next">&#8250;</button>
+                    </div>
+
+                    <div class="dots" id="dots"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===================== SECTION 3 — STACK ===================== -->
+    <section id="section-stack">
+        <div class="stack-sticky">
+            <div class="stack-header">
+                <span class="stack-eyebrow">especialidades</span>
+                <h2 class="stack-title">TÉCNICAS</h2>
+            </div>
+            <div class="stack-cards" id="stack-cards">
+                <!-- Card 1 -->
+                <div class="sk-card" data-index="0">
+                    <div class="sk-card-inner">
+                        <div class="sk-number">01</div>
+                        <div class="sk-info">
+                            <h3 class="sk-name">Agentes de WhatsApp & IA</h3>
+                            <p class="sk-desc">Agentes inteligentes que atuam como tutores, gestores financeiros e suporte humanizado 24h.
+Uma operação completa que automatiza o atendimento e o resgate de vendas com precisão de especialista.</p>
+                            <div class="sk-techs">
+                                <span>OpenAI Assistants API</span><span>Prompt Engineering</span><span>LLMs</span><span> Automações com IA</span><span>JSON</span>
+                            </div>
+                        </div>
+                        <div class="sk-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="8" width="40" height="32" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M4 14h40" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="10" cy="11" r="1.5" fill="currentColor"/>
+                                <circle cx="16" cy="11" r="1.5" fill="currentColor"/>
+                                <circle cx="22" cy="11" r="1.5" fill="currentColor"/>
+                                <path d="M18 24l-6 4 6 4M30 24l6 4-6 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="sk-card" data-index="1">
+                    <div class="sk-card-inner">
+                        <div class="sk-number">02</div>
+                        <div class="sk-info">
+                            <h3 class="sk-name">Workflow Otimizado</h3>
+                            <p class="sk-desc">Horas de trabalho manual substituídas por segundos de processamento automático integrando suas ferramentas.</p>
+                            <div class="sk-techs">
+                                <span>Make.com</span><span>Webhooks</span><span>APIs Rest</span><span>Z-API</span><span>JSON</span>
+                            </div>
+                        </div>
+                        <div class="sk-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="6" width="36" height="36" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M6 18h36M6 30h36M18 6v36M30 6v36" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="sk-card" data-index="2">
+                    <div class="sk-card-inner">
+                        <div class="sk-number">03</div>
+                        <div class="sk-info">
+                            <h3 class="sk-name">Web Design / Saas</h3>
+                            <p class="sk-desc">Do wireframe ao protótipo interativo — design centrado no usuário com foco em conversão e experiência.</p>
+                            <div class="sk-techs">
+                                <span>HTML5</span><span>CSS</span><span>JavaScript</span><span>React.js</span><span>tailwind css</span>
+                            </div>
+                        </div>
+                        <div class="sk-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="32" cy="16" r="8" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="16" cy="32" r="8" stroke="currentColor" stroke-width="2.5"/>
+                                <rect x="24" y="24" width="16" height="16" rx="8" stroke="currentColor" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="sk-card" data-index="3">
+                    <div class="sk-card-inner">
+                        <div class="sk-number">04</div>
+                        <div class="sk-info">
+                            <h3 class="sk-name">Software architecture</h3>
+                            <p class="sk-desc">Dados brutos transfromados em decisões estratégicas através de análise e infraestrutura robusta. </p>
+                            <div class="sk-techs">
+                                <span>PHP</span><span>Node.js</span><span>SQL</span><span>Firebase</span><span>Mysql</span>
+                            </div>
+                        </div>
+                        <div class="sk-icon">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M24 6v6M24 36v6M6 24h6M36 24h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M11.5 11.5l4.25 4.25M32.25 32.25l4.25 4.25M36.5 11.5l-4.25 4.25M15.75 32.25l-4.25 4.25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== FOOTER ===================== -->
+            <footer id="footer">
+                <div class="footer-socials">
+                    <!-- WhatsApp — substitua o número pelo seu (com DDI) -->
+                    <a href="https://wa.me/5524981609173" target="_blank" rel="noopener noreferrer" class="social-link social-whatsapp" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                    <!-- Instagram — substitua pelo seu @ -->
+                    <a href="https://instagram.com/jv.devflow" target="_blank" rel="noopener noreferrer" class="social-link social-instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </a>
+                    <!-- TikTok — substitua pelo seu @ -->
+                    <a href="https://tiktok.com/@jvsatiro080" target="_blank" rel="noopener noreferrer" class="social-link social-tiktok" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.54V6.79a4.86 4.86 0 01-1.02-.1z"/>
+                        </svg>
+                    </a>
+                </div>
+            </footer>
+
+        </div>
+    </section>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="script.js"></script>
+
+    <script>
+        /* ── CONTATO: rola até o final absoluto da página ── */
+        document.getElementById("nav-contato").addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+            document.getElementById("mobile-menu").classList.remove("active");
+            document.getElementById("nav-menu").classList.remove("active");
+        });
+    </script>
+
+</body>
+</html>
