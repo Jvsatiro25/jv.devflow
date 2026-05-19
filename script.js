@@ -241,7 +241,7 @@ function initChatCard() {
         { side: 'right', text: 'Olá! Pode me ajudar hoje?' },
         { side: 'left',  text: 'Claro, João! O que você precisa?📚✍' },
         { side: 'right', text: 'Resuma o capítulo 5 do livro desse semestre' },
-        { side: 'left',  text: 'O capítulo 5 do livro aborda os macanismos... Ler mais' },
+        { side: 'left',  text: 'O capítulo 5 do livro aborda os mecanismos... Ler mais' },
         { side: 'right', text: 'Obrigado professor!' },
         { side: 'left',  text: 'Fico feliz em ajudar! 😊' },
     ];
