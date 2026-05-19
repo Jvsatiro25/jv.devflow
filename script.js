@@ -98,7 +98,7 @@ const projects = [
 /* ── CANVAS ── */
 const canvas = document.getElementById("hero-lightpass");
 const ctx = canvas.getContext("2d");
-const frameCount = 108;
+const frameCount = 99;
 const getFrameSrc = i => `./IMG/img${i}.png`;
 
 const images = [];
